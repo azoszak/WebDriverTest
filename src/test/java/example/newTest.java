@@ -22,7 +22,7 @@ public class newTest
     @BeforeTest
     public void beforeTest()
     {
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
     }
     @AfterTest
     public void afterTest()
