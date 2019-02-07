@@ -43,8 +43,8 @@
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.9.1</version>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>LATEST</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
