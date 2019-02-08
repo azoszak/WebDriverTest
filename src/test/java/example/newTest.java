@@ -1,5 +1,6 @@
 package example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,7 +22,8 @@ public class newTest
     @BeforeTest
     public void beforeTest()
     {
-        driver = new FirefoxDriver();
+        WebDriverManager.firefoxdriver().setup();
+         driver = new FirefoxDriver();
     }
     @AfterTest
     public void afterTest()
