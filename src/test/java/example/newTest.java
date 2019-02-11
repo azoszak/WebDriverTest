@@ -75,16 +75,16 @@ public class newTest
         /* fill formular with some basic  entries */
         driver.findElement(By.id("user_login")).click();
         driver.findElement(By.id("user_login")).clear();
-        driver.findElement(By.id("user_login")).sendKeys("mohamedNagi");
+        driver.findElement(By.id("user_login")).sendKeys("Nagi");
         driver.findElement(By.id("email")).click();
         driver.findElement(By.id("email")).clear();
-        driver.findElement(By.id("email")).sendKeys("eng.m.nagi@gmail.com");
+        driver.findElement(By.id("email")).sendKeys("mohamedNagi@gmail.com");
         driver.findElement(By.id("first_name")).click();
         driver.findElement(By.id("first_name")).clear();
-        driver.findElement(By.id("first_name")).sendKeys("mohamed");
+        driver.findElement(By.id("first_name")).sendKeys("xxmohamed");
         driver.findElement(By.id("last_name")).click();
         driver.findElement(By.id("last_name")).clear();
-        driver.findElement(By.id("last_name")).sendKeys("Nagi");
+        driver.findElement(By.id("last_name")).sendKeys("xNagi");
         WebElement ckb_BenutzerBenachrichtigen =  driver.findElement(By.id("send_user_notification"));
         System.out.printf("Benutzer Benachrichtigungen: Häckchen gesetzt?  %s \n", ckb_BenutzerBenachrichtigen.isEnabled() );
         if (ckb_BenutzerBenachrichtigen.isEnabled()) {
