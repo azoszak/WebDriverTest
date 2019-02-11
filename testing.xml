@@ -5,6 +5,7 @@
         <classes>
             <class name="example.newTest">
                 <methods>
+
                     <include name="testEasy"/>
                 </methods>
             </class>
