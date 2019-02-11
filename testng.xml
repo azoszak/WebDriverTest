@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/mohamednagi/IdeaProjects/WebDriverTest/src/test/java/example/newTest.java">
+        <classes>
+            <class name="example.newTest">
+            <methods>
+                <include name="A_verifyHomepageTitle"/>
+                <include name="B_loginAdmin"/>
+                <include name="C_addUser"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
