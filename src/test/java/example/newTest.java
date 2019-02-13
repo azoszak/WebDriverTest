@@ -23,12 +23,11 @@ public class newTest
     @BeforeTest
     public void beforeTest()
     {
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.get("http://www.wiedamann.net/ncs-testing/");
         String title = driver.getTitle();
         Assert.assertTrue(title.contains("NCS-Testing – Testautomatisierung vom Feinsten ;-)"));
-
     }
 
     @Test
@@ -56,7 +55,7 @@ public class newTest
     }
 
     @Test
-    public void C_addUser() {
+    public void  C_addUser() {
 
         // System.out.println("Add user as admin");
 
@@ -93,7 +92,7 @@ public class newTest
         }
 
         new Select(driver.findElement(By.id("role"))).selectByVisibleText("Mitarbeiter");
-        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Rolle'])[1]/following::option[2]")).click();
+        //driver.findElement(By.xpath((//*[normalize-space(text()) and normalize-space(.)='Rolle'])[1]/following::option[2])).click();
         driver.findElement(By.id("createusersub")).click();
 
         WebDriverWait w = new WebDriverWait(driver,20);
