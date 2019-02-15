@@ -23,8 +23,8 @@ public class newTest
     @BeforeTest
     public void beforeTest()
     {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
         driver.get("http://www.wiedamann.net/ncs-testing/");
         String title = driver.getTitle();
         Assert.assertTrue(title.contains("NCS-Testing – Testautomatisierung vom Feinsten ;-)"));
@@ -52,6 +52,8 @@ public class newTest
         driver.findElement(By.id("user_login")).sendKeys("admin");
         driver.findElement(By.id("wp-submit")).click();
 
+
+
     }
 
     @Test
@@ -74,16 +76,16 @@ public class newTest
         /* fill formular with some basic  entries */
         driver.findElement(By.id("user_login")).click();
         driver.findElement(By.id("user_login")).clear();
-        driver.findElement(By.id("user_login")).sendKeys("MNagimm");
+        driver.findElement(By.id("user_login")).sendKeys("MNagimmxx");
         driver.findElement(By.id("email")).click();
         driver.findElement(By.id("email")).clear();
-        driver.findElement(By.id("email")).sendKeys("mohamedNagixxxx@gmail.com");
+        driver.findElement(By.id("email")).sendKeys("mohamedNagixxxxxx@gmail.com");
         driver.findElement(By.id("first_name")).click();
         driver.findElement(By.id("first_name")).clear();
-        driver.findElement(By.id("first_name")).sendKeys("xxmohamedxxxxx");
+        driver.findElement(By.id("first_name")).sendKeys("xxmohamedxxxxxxx");
         driver.findElement(By.id("last_name")).click();
         driver.findElement(By.id("last_name")).clear();
-        driver.findElement(By.id("last_name")).sendKeys("xNagixxxx");
+        driver.findElement(By.id("last_name")).sendKeys("xNagixxxxxx");
         WebElement ckb_BenutzerBenachrichtigen =  driver.findElement(By.id("send_user_notification"));
         System.out.printf("Benutzer Benachrichtigungen: Häckchen gesetzt?  %s \n", ckb_BenutzerBenachrichtigen.isEnabled() );
         if (ckb_BenutzerBenachrichtigen.isEnabled()) {
