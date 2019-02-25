@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/ZTE_testing/IdeaProjects/WebDriverTest/src/test/java/example/newTest2.java">
-    <classes><class name="example.newTest2">
-    <methods><include name="A001_verifyHomepageTitle"/>
-        <include name="A002_loginAdmin"/><include name="A003_SelectAllUsers"/>
-        <include name="A004_ChangeRoleforSelectedUser"/>
-        <include name="A005_logoutAdmin"/>
-    </methods></class></classes></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/ZTE_testing/IdeaProjects/WebDriverTest/src/test/java/RegressionTest"><classes>
+    <class name="RegressionTest.DataProviderWithExcel_001"><methods><include name="A001_loginAdmin"/><include name="A002_adduser"/><include name="Z1000_logoutAdmin"/></methods></class><class name="RegressionTest.DataProviderwithExcel_deleteUser"><methods><include name="A001_loginAdmin"/><include name="B_0001_SearchUser"/><include name="Z1000_logoutAdmin"/></methods></class><class name="RegressionTest.loginAdmin"><methods><include name="B001_loginAdmin"/></methods></class><class name="RegressionTest.modifyUser"><methods><include name="A001_loginUser"/></methods></class><class name="RegressionTest.startBrowser"><methods><include name="A001_verifyHomepageTitle"/></methods></class></classes></test></suite>

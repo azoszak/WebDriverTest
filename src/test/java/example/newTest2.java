@@ -62,7 +62,6 @@ public class newTest2
         username = "admin";
         password = "!NCS2019";
 
-
         System.out.println("Login user as admin");
         driver.findElement(By.linkText("Anmelden")).click();
 
@@ -77,8 +76,6 @@ public class newTest2
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.findElement(By.id("wp-submit")).click();
 
-
-
         WebDriverWait wait = new WebDriverWait(driver,2);
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("wp-admin-bar-my-account")));
 
@@ -86,12 +83,12 @@ public class newTest2
         System.out.printf("Anmeldung: %n  %s", driver.findElement(By.id("wp-admin-bar-my-account")).getText());
         System.out.println();
 
-
-
     }
 
     @Test
     public void A003_SelectAllUsers() {
+
+        String s1;
         driver.findElement(By.xpath("//li[@id='menu-users']/a/div[3]")).click();
         System.out.println("Get Table Infos");
 
@@ -106,7 +103,15 @@ public class newTest2
             //System.out.printf("\n\n Checkbox: %s \n \n ", driver.findElement(By.xpath("//table/tbody/tr["+ i +"]/th/input")).getAttribute("id"));
             System.out.printf(" UserID: %s \t ", driver.findElement(By.xpath("//table/tbody/tr["+ i +"]/th/label")).getAttribute("for") ) ;
             System.out.printf(" Username. %s \n ", driver.findElement(By.xpath("//table/tbody/tr["+ i +"]/th/label")).getText() ) ;
-            driver.findElement(By.xpath("//table/tbody/tr["+ i +"]/th/input")).click();
+
+            s1 = driver.findElement(By.xpath("//table/tbody/tr["+ i +"]/th/label")).getAttribute("for");
+
+            if (s1.contentEquals("user_1")) {
+            }
+            else {
+                driver.findElement(By.xpath("//table/tbody/tr[" + i + "]/th/input")).click();
+            }
+
             //for(int j=1; j<=i_ColCount;j++){
             //   System.out.print(driver.findElement(By.xpath("//table/tbody/tr[" + i +"]/td[" + j + "]")).getText() + "\t");
             //}
@@ -124,13 +129,26 @@ public class newTest2
     @Test
     public void A004_ChangeRoleforSelectedUser() {
 
-        new Select(driver.findElement(By.id("new_role2"))).selectByVisibleText("Redakteur");
+        new Select(driver.findElement(By.id("new_role2"))).selectByVisibleText("Mitarbeiter");
         driver.findElement(By.id("new_role2")).click();
         driver.findElement(By.id("changeit2")).click();
 
+        WebDriverWait w = new WebDriverWait(driver,20);
+
+        //<p>Die Rollen der anderen Benutzer sind verändert worden.</p>
+        // //*[@id="message"]/p
+        //<div id="message" class="updated notice is-dismissible"><p>Die Rollen der anderen Benutzer sind verändert worden.</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Diese Meldung ausblenden.</span></button></div>
+        w.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
+        //System.out.printf("Message: %s", driver.findElement(By.id("message")).getText());
+
+       // String s = driver.findElement(By.xpath("//*[@class='updated notice is-dismissible']")).getText();
+        Assert.assertEquals(driver.findElement(By.xpath("//*[@class='updated notice is-dismissible']")).getText().contains("Rollen gewechselt"), true);
+
+
+
     }
 
-/*
+
     @Test
     public void A005_logoutAdmin() {
         Actions action = new Actions(driver);
@@ -154,6 +172,5 @@ public class newTest2
         driver.quit();
     }
 
-*/
 }
 
