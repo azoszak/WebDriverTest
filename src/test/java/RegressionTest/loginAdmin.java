@@ -14,7 +14,7 @@ public class loginAdmin {
 
     @DataProvider(name = "Authentication")
     public static Object[][] credentials() {
-        Object[][] testObjArray = ExcelUtils2.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","Admin");
+        Object[][] testObjArray = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","Admin");
         return (testObjArray);
     }
 

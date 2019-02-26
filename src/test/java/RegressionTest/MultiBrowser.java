@@ -1,6 +1,7 @@
 package RegressionTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -9,10 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import static org.testng.Assert.*;
-import org.openqa.selenium.*;
 
-public class modifyUser {
+import static org.testng.Assert.fail;
+
+public class MultiBrowser {
     private WebDriver driver;
     public String baseUrl = "http://localhost/wordpress";
     public WebElement webtable;
@@ -30,7 +31,7 @@ public class modifyUser {
     public void setUp(String browser ) throws Exception {
 
         if(browser.equalsIgnoreCase("firefox")) {
-            WebDriverManager.chromedriver().setup();
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
         else if(browser.equalsIgnoreCase("ie")){
@@ -94,14 +95,16 @@ public class modifyUser {
 
     public void Z1000_logout() {
         Actions action = new Actions(driver);
-        WebElement mainMenue = driver.findElement(By.id("wp-admin-bar-my-account"));
-        action.moveToElement(mainMenue).perform();
+        //WebElement mainMenue = driver.findElement(By.id("wp-admin-bar-my-account"));
+        //WebElement m = driver.findElement(By.id("wpadminbar"));
+        //System.out.printf("\n Webadmin wpadmin Element :%s \n", m.getText());
+        action.moveToElement(driver.findElement(By.xpath("//a[contains(@href,'wp-admin/profile.php')]"))).perform();
         WebDriverWait w = new WebDriverWait(driver,20);
         w.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Abmelden")));
         driver.findElement(By.linkText("Abmelden")).click();
         w.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("login")));
         Assert.assertEquals(driver.findElement(By.id("login")).getText().contains("Du hast dich erfolgreich abgemeldet"), true);
-        //System.out.printf("Abmeldung: %n  %s", driver.findElement(By.id("login")).getText());
+        System.out.printf("\n Abmeldung: %n  %s", driver.findElement(By.id("login")).getText());
 
     }
 

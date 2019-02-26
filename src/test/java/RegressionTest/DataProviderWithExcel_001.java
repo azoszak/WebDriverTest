@@ -38,7 +38,9 @@ public class DataProviderWithExcel_001 {
     public void beforeTest()
     {
         WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
+
         driver.get(baseUrl);
         String title = driver.getTitle();
         Assert.assertTrue(title.contains("NCS-Testing"));
