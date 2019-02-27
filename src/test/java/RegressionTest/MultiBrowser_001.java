@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -13,7 +14,7 @@ import org.testng.annotations.*;
 
 import static org.testng.Assert.fail;
 
-public class MultiBrowser {
+public class MultiBrowser_001 {
     private WebDriver driver;
     public String baseUrl = "http://localhost/wordpress";
     public WebElement webtable;
@@ -25,6 +26,19 @@ public class MultiBrowser {
         Object[][] testObjArray = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","UserLogin");
         return (testObjArray);
     }
+
+    @DataProvider(name = "addUser")
+    public static Object[][] addUser() {
+        Object[][] testObjArray_addUser = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","User");
+        return (testObjArray_addUser);
+    }
+
+    @DataProvider(name = "changeRoleforUser")
+    public static Object[][] changeRoleUser() {
+        Object[][] testObjArray_modUser = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","modifyUser");
+        return (testObjArray_modUser);
+    }
+
 
     @Parameters("browser")
     @BeforeClass( alwaysRun = true)
@@ -38,6 +52,10 @@ public class MultiBrowser {
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
         }
+        else if(browser.equalsIgnoreCase("opera")){
+            WebDriverManager.operadriver().setup();
+            driver = new OperaDriver();
+        }
         else {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
@@ -49,9 +67,43 @@ public class MultiBrowser {
         driver.findElement(By.linkText("Anmelden")).click();
     }
 
-    @Test(dataProvider = "userLogin")
-    public void  A001_loginUser(String sTC, String sUsername, String sPassword, String firstName, String lastName) {
 
+    @Test()
+    public void A001_loginAdmin() {
+        String sUsername = "admin";
+        String sPassword = "!NCS2019";
+        driver.findElement(By.id("user_login")).sendKeys(sUsername);
+        try{
+            Thread.sleep(2000);
+        }
+        catch(InterruptedException ie){
+        }
+        //driver.findElement(By.id("user_pass")).clear();
+        driver.findElement(By.id("user_pass")).sendKeys(sPassword);
+        driver.findElement(By.id("wp-submit")).click();
+        WebDriverWait wait = new WebDriverWait(driver,2);
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("wp-admin-bar-my-account")));
+        Assert.assertEquals(driver.findElement(By.id("wp-admin-bar-my-account")).getText().contains("admin"),true);
+        System.out.printf("Anmeldung: %n  %s", driver.findElement(By.id("wp-admin-bar-my-account")).getText());
+        System.out.println();
+
+    }
+
+    @Test(dataProvider = "changeRoleforUser")
+    public void A002_ChangeRoleforUser(String sTC, String sUserLogin, String sRole ) {
+
+       System.out.printf("Modification of the user Roles has to not implemented yet \n");
+
+    }
+
+    @Test()
+    public void A100_adminlogout() {
+
+        Z1000_logout();
+    }
+
+    @Test(dataProvider = "userLogin")
+    public void  B001_loginUser(String sTC, String sUsername, String sPassword, String firstName, String lastName) {
         System.out.printf("\n Testcase: %s Login user as : %s  Passwd: %s \n",sTC, sUsername, sPassword);
         //driver.findElement(By.id("user_login")).clear();
         driver.findElement(By.id("user_login")).sendKeys(sUsername);
@@ -69,27 +121,26 @@ public class MultiBrowser {
         Assert.assertEquals(driver.findElement(By.id("wp-admin-bar-my-account")).getText().contains(lastName),true);
         // do something
 
+        modifyUser();
         Z1000_logout();
     }
 
     //@Test
-    public void modifyUser() throws Exception {
+    public void modifyUser()  {
 
+        WebElement w = driver.findElement(By.xpath("//li[@class='wp-not-current-submenu menu-top menu-icon-users menu-top-first']"));
+        System.out.printf("\n Change Profile: W ist gleich: Text; %s, Tagname: %s, Class: %s  \n " , w.getText(), w.getTagName(), w.getClass());
 
-        driver.findElement(By.xpath("//*[normalize-space(text()) and normalize-space(.)='Erstellen'])[2]/following::div[8]")).click();
+        driver.findElement(By.xpath("//li[@class='wp-not-current-submenu menu-top menu-icon-users menu-top-first']")).click();
+        driver.findElement(By.id("admin_color_light")).click();
+        driver.findElement(By.id("url")).click();
+        driver.findElement(By.id("url")).clear();
+        driver.findElement(By.id("url")).sendKeys("www.gibtesnicht.de");
         driver.findElement(By.id("description")).click();
         driver.findElement(By.id("description")).clear();
-        driver.findElement(By.id("description")).sendKeys("Dies ist ein Test");
-        driver.findElement(By.xpath("//*[normalize-space(text()) and normalize-space(.)='Neues Passwort'])[1]/following::button[1]")).click();
-        driver.findElement(By.id("pass1-text")).click();
-        driver.findElement(By.id("pass1-text")).clear();
-        driver.findElement(By.id("pass1-text")).sendKeys("$_1234zz");
-
-        if ( driver.findElement(By.className("pw-checkbox")).isDisplayed() ){
-            driver.findElement(By.className("pw-checkbox")).click();
-        }
+        driver.findElement(By.id("description")).sendKeys("Ich bin ein Testobjekt");
         driver.findElement(By.id("submit")).click();
-        driver.findElement(By.linkText("Abmelden")).click();
+
 
     }
 

@@ -1,45 +1,54 @@
 package RegressionTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-public class DataProviderWithExcel_001 {
+import static org.testng.Assert.fail;
 
-    private static WebDriver driver;
-    WebDriverWait wait;
-
-    public String baseUrl = "http://localhost/wordpress/";
+public class DataProviderWithExcel_addUser {
+    private WebDriver driver;
+    public String baseUrl = "http://localhost/wordpress";
     public WebElement webtable;
-    @DataProvider(name = "Authentication")
-    public static Object[][] credentials() {
-        Object[][] testObjArray = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","Admin");
-        return (testObjArray);
-    }
-    @DataProvider(name = "User")
-    public static Object[][] user() {
-        Object[][] testObjArray_User = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","User");
-        return (testObjArray_User);
+    private boolean acceptNextAlert = true;
+    private StringBuffer verificationErrors = new StringBuffer();
+
+    @DataProvider(name = "addUser")
+    public static Object[][] addUser() {
+        Object[][] testObjArray_addUser = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","User");
+        return (testObjArray_addUser);
     }
 
+    @Parameters("browser")
+    @BeforeClass( alwaysRun = true)
+    public void setUp(String browser ) throws Exception {
 
-    @BeforeTest
-    public void beforeTest()
-    {
-        WebDriverManager.chromedriver().setup();
+        if(browser.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
+        else if(browser.equalsIgnoreCase("ie")){
+            WebDriverManager.iedriver().setup();
+            driver = new InternetExplorerDriver();
+        }
+        else if(browser.equalsIgnoreCase("opera")){
+            WebDriverManager.operadriver().setup();
+            driver = new OperaDriver();
+        }
 
-        driver = new ChromeDriver();
+        else {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
 
         driver.get(baseUrl);
         String title = driver.getTitle();
@@ -47,11 +56,10 @@ public class DataProviderWithExcel_001 {
         driver.findElement(By.linkText("Anmelden")).click();
     }
 
-    @Test(dataProvider = "Authentication")
-    public void  A001_loginAdmin(String sTC, String sUsername, String sPassword) {
-
-        System.out.printf("\n Testcase: %s Login user as : %s  Passwd: %s \n",sTC, sUsername, sPassword);
-        //driver.findElement(By.id("user_login")).clear();
+    @Test()
+    public void A001_loginAdmin() {
+        String sUsername = "admin";
+        String sPassword = "!NCS2019";
         driver.findElement(By.id("user_login")).sendKeys(sUsername);
         try{
             Thread.sleep(2000);
@@ -63,21 +71,24 @@ public class DataProviderWithExcel_001 {
         driver.findElement(By.id("wp-submit")).click();
         WebDriverWait wait = new WebDriverWait(driver,2);
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("wp-admin-bar-my-account")));
-
         Assert.assertEquals(driver.findElement(By.id("wp-admin-bar-my-account")).getText().contains("admin"),true);
         System.out.printf("Anmeldung: %n  %s", driver.findElement(By.id("wp-admin-bar-my-account")).getText());
         System.out.println();
+
     }
 
-    @Test(dataProvider = "User")
+    @Test(dataProvider = "addUser")
     public void A002_adduser(String sTC, String suserLogin, String sEmail,
-                        String sfirstName, String slastName, String sPassword,
-                        String ssendUserNotifiaction, String sRole ) {
+                             String sfirstName, String slastName, String sPassword,
+                             String ssendUserNotifiaction, String sRole ) {
 
         System.out.printf("\n Testcase: %s Login user as : %s  Passwd: %s \n",sTC, suserLogin, sPassword);
 
-        driver.findElement(By.xpath("//li[@id='menu-users']/a/div[3]")).click();
-        driver.findElement(By.className("page-title-action")).click();
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.xpath("//*[@class = 'wp-menu-image dashicons-before dashicons-admin-users']"))).perform();
+        WebDriverWait w = new WebDriverWait(driver,20);
+        w.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Neu hinzufügen")));
+        driver.findElement(By.linkText("Neu hinzufügen")).click();
         /* fill formular with some basic  entries */
         driver.findElement(By.id("user_login")).click();
         driver.findElement(By.id("user_login")).clear();
@@ -110,35 +121,68 @@ public class DataProviderWithExcel_001 {
         new Select(driver.findElement(By.id("role"))).selectByVisibleText(sRole);
         //driver.findElement(By.xpath((//*[normalize-space(text()) and normalize-space(.)='Rolle'])[1]/following::option[2])).click();
         driver.findElement(By.id("createusersub")).click();
-        WebDriverWait w = new WebDriverWait(driver,20);
+        WebDriverWait w1 = new WebDriverWait(driver,20);
         System.out.println("Add user as admin");
-        w.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
+        w1.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
         Assert.assertEquals(driver.findElement(By.id("message")).getText().contains("Neuer Benutzer erstellt"), true);
     }
 
 
-
-    @Test
-    public void Z1000_logoutAdmin() {
+    @Test()
+    public void Z1000_logout() {
         Actions action = new Actions(driver);
-        WebElement mainMenue = driver.findElement(By.id("wp-admin-bar-my-account"));
-        action.moveToElement(mainMenue).perform();
+        //WebElement mainMenue = driver.findElement(By.id("wp-admin-bar-my-account"));
+        //WebElement m = driver.findElement(By.id("wpadminbar"));
+        //System.out.printf("\n Webadmin wpadmin Element :%s \n", m.getText());
+        action.moveToElement(driver.findElement(By.xpath("//a[contains(@href,'wp-admin/profile.php')]"))).perform();
         WebDriverWait w = new WebDriverWait(driver,20);
         w.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Abmelden")));
         driver.findElement(By.linkText("Abmelden")).click();
-
         w.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("login")));
-
         Assert.assertEquals(driver.findElement(By.id("login")).getText().contains("Du hast dich erfolgreich abgemeldet"), true);
-        //System.out.printf("Abmeldung: %n  %s", driver.findElement(By.id("login")).getText());
+        System.out.printf("\n Abmeldung: %n  %s", driver.findElement(By.id("login")).getText());
 
     }
 
-    @AfterTest
-    public void afterTest()
-    {
+    @AfterClass(alwaysRun = true)
+    public void tearDown() throws Exception {
         driver.quit();
+        String verificationErrorString = verificationErrors.toString();
+        if (!"".equals(verificationErrorString)) {
+            fail(verificationErrorString);
+        }
+    }
+
+    private boolean isElementPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    private boolean isAlertPresent() {
+        try {
+            driver.switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
+    private String closeAlertAndGetItsText() {
+        try {
+            Alert alert = driver.switchTo().alert();
+            String alertText = alert.getText();
+            if (acceptNextAlert) {
+                alert.accept();
+            } else {
+                alert.dismiss();
+            }
+            return alertText;
+        } finally {
+            acceptNextAlert = true;
+        }
     }
 }
-
-

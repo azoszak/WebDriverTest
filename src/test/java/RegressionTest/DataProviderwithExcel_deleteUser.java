@@ -167,6 +167,11 @@ public class DataProviderwithExcel_deleteUser {
         //driver.findElement(By.id("user_313")).click();
         driver.findElement(By.id("bulk-action-selector-bottom")).click();
         new Select(driver.findElement(By.id("bulk-action-selector-bottom"))).selectByVisibleText("Löschen");
+
+
+        <input type="radio" id="delete_option0" name="delete_option" value="delete">
+
+
         driver.findElement(By.id("bulk-action-selector-bottom")).click();
         driver.findElement(By.id("doaction2")).click();
 
