@@ -41,8 +41,13 @@ public class DataProviderWithExcel_addUser {
             driver = new InternetExplorerDriver();
         }
         else if(browser.equalsIgnoreCase("opera")){
+            //System.setProperty(“webdriver.opera.driver”, "g\\AppData\\Local\\Programs\\Opera\\launcher.exe");
+           // WebDriverManager.operadriver().targetPath("g\\AppData\\Local\\Programs\\Opera\\launcher.exe");
+           //System.setProperty("webdriver.opera.driver", "C:\\Users\\ZTE_testing\\AppData\\Local\\Programs\\Opera\\launcher.exe" );
             WebDriverManager.operadriver().setup();
             driver = new OperaDriver();
+
+
         }
 
         else {

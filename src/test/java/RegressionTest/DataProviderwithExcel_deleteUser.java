@@ -5,15 +5,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class DataProviderwithExcel_deleteUser {
 
@@ -36,16 +36,34 @@ public class DataProviderwithExcel_deleteUser {
         return (testObjArray_deleteUser);
     }
 
-    @BeforeTest
-    public void beforeTest() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+    @Parameters("browser")
+    @BeforeClass( alwaysRun = true)
+    public void setUp(String browser ) throws Exception {
+
+        if(browser.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
+        else if(browser.equalsIgnoreCase("ie")){
+            WebDriverManager.iedriver().setup();
+            driver = new InternetExplorerDriver();
+        }
+        else if(browser.equalsIgnoreCase("opera")){
+            WebDriverManager.operadriver().setup();
+            driver = new OperaDriver();
+        }
+
+        else {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
+
         driver.get(baseUrl);
         String title = driver.getTitle();
         Assert.assertTrue(title.contains("NCS-Testing"));
         driver.findElement(By.linkText("Anmelden")).click();
-
     }
+
 
     @Test(dataProvider = "Admin")
     public void  A001_loginAdmin(String sTC, String sUsername, String sPassword) {
@@ -98,6 +116,7 @@ public class DataProviderwithExcel_deleteUser {
                 Assert.assertEquals(driver.findElement(By.xpath("//*[@name='updateusers']")).getText().contains("nicht gelöscht"), true);
             } else {
                 B_0003_DeleteSelectedUser();
+                System.out.println("Nase");
                 WebDriverWait w = new WebDriverWait(driver, 20);
                 w.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
                 System.out.printf("War die Löschung erfolgreich: %s ", driver.findElement(By.id("message")).getText());
@@ -159,8 +178,10 @@ public class DataProviderwithExcel_deleteUser {
         new Select(driver.findElement(By.id("bulk-action-selector-bottom"))).selectByVisibleText("Löschen");
         driver.findElement(By.id("bulk-action-selector-bottom")).click();
         driver.findElement(By.id("doaction2")).click();
+        if ( !driver.findElements(By.id("delete_option0")).isEmpty() ) {
+            driver.findElement(By.id("delete_option0")).click();
+        }
         driver.findElement(By.id("submit")).click();
-        // //*[@id="updateusers"]/div/ul/li/strong
     }
 
     public void B_0004_DeleteSelectedAdmin() throws Exception {
@@ -168,10 +189,7 @@ public class DataProviderwithExcel_deleteUser {
         driver.findElement(By.id("bulk-action-selector-bottom")).click();
         new Select(driver.findElement(By.id("bulk-action-selector-bottom"))).selectByVisibleText("Löschen");
 
-
-        <input type="radio" id="delete_option0" name="delete_option" value="delete">
-
-
+       // <input type="radio" id="delete_option0" name="delete_option" value="delete">
         driver.findElement(By.id("bulk-action-selector-bottom")).click();
         driver.findElement(By.id("doaction2")).click();
 

@@ -14,7 +14,7 @@ import org.testng.annotations.*;
 
 import static org.testng.Assert.fail;
 
-public class MultiBrowser_001 {
+public class DataProviderWithExcel_modifyUser {
     private WebDriver driver;
     public String baseUrl = "http://localhost/wordpress";
     public WebElement webtable;
@@ -97,32 +97,41 @@ public class MultiBrowser_001 {
     }
 
     @Test()
-    public void A100_adminlogout() {
-
-        Z1000_logout();
+        public void A100_adminlogout() {
+            Z1000_logout();
     }
 
     @Test(dataProvider = "userLogin")
     public void  B001_loginUser(String sTC, String sUsername, String sPassword, String firstName, String lastName) {
         System.out.printf("\n Testcase: %s Login user as : %s  Passwd: %s \n",sTC, sUsername, sPassword);
-        //driver.findElement(By.id("user_login")).clear();
+        driver.findElement(By.id("user_login")).clear();
         driver.findElement(By.id("user_login")).sendKeys(sUsername);
         try{
             Thread.sleep(2000);
         }
         catch(InterruptedException ie){
         }
-        //driver.findElement(By.id("user_pass")).clear();
+        driver.findElement(By.id("user_pass")).clear();
         driver.findElement(By.id("user_pass")).sendKeys(sPassword);
         driver.findElement(By.id("wp-submit")).click();
-        WebDriverWait wait = new WebDriverWait(driver,2);
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("wp-admin-bar-my-account")));
-        System.out.printf("Anmeldung: %n  %s", driver.findElement(By.id("wp-admin-bar-my-account")).getText());
-        Assert.assertEquals(driver.findElement(By.id("wp-admin-bar-my-account")).getText().contains(lastName),true);
-        // do something
 
-        modifyUser();
-        Z1000_logout();
+
+        if(sTC.contains("Wrong")) {
+            System.out.printf("check if the user or passwd is wrog \n");
+           // WebDriverWait wait = new WebDriverWait(driver,2);
+           // wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("login-error")));
+            System.out.printf("Check Login GetText:%s \n ", driver.findElement(By.id("login_error")).getText());
+            Assert.assertEquals(driver.findElement(By.id("login_error")).getText().contains("FEHLER"), true);
+        }
+        else {
+            WebDriverWait wait = new WebDriverWait(driver,2);
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("wp-admin-bar-my-account")));
+            System.out.printf("Anmeldung: %n  %s", driver.findElement(By.id("wp-admin-bar-my-account")).getText());
+            Assert.assertEquals(driver.findElement(By.id("wp-admin-bar-my-account")).getText().contains(lastName), true);
+            modifyUser();
+            Z1000_logout();
+        }
+
     }
 
     //@Test
