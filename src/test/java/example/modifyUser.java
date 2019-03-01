@@ -1,5 +1,6 @@
-package RegressionTest;
+package example;
 
+import RegressionTest.ExcelUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -11,6 +12,8 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.Select;
+
 
 public class modifyUser {
     private WebDriver driver;
@@ -46,10 +49,34 @@ public class modifyUser {
         String title = driver.getTitle();
         Assert.assertTrue(title.contains("NCS-Testing"));
         driver.findElement(By.linkText("Anmelden")).click();
+
+        String sUsername = "admin";
+        String sPassword = "!NCS2019";
+        loginAdmin001.A001_loginAdmin(driver,sUsername,sPassword);
+       // loginAdmin001.Z1000_logout(driver);
+
+    }
+        @Test()
+        public void A002_ChangeRole() throws Exception {
+
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.xpath("//*[@class = 'wp-menu-image dashicons-before dashicons-admin-users']"))).perform();
+        WebDriverWait w = new WebDriverWait(driver,20);
+        w.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Alle Benutzer")));
+        driver.findElement(By.linkText("Alle Benutzer")).click();
+        // Benutzer auswählen
+
+        driver.findElement(By.id("role")).click();
+        new Select(driver.findElement(By.id("role"))).selectByVisibleText("Autor");
+        driver.findElement(By.id("role")).click();
+        driver.findElement(By.id("submit")).click();
+        loginAdmin001.Z1000_logout(driver);
+
     }
 
-    @Test(dataProvider = "userLogin")
-    public void  A001_loginUser(String sTC, String sUsername, String sPassword, String firstName, String lastName) {
+
+    //@Test(dataProvider = "userLogin")
+    public void  A003_loginUser(String sTC, String sUsername, String sPassword, String firstName, String lastName) {
 
         System.out.printf("\n Testcase: %s Login user as : %s  Passwd: %s \n",sTC, sUsername, sPassword);
         //driver.findElement(By.id("user_login")).clear();

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="RegressionTest.DataProviderWithExcel_addUser">
+                <methods>
+                    <include name="A001_loginAdmin"/>
+                    <include name="A002_adduser"/>
+                    <include name="Z1000_logout"/>
+                </methods>
+            </class>
+            <class name="RegressionTest.DataProviderWithExcel_modifyUser">
+                <methods>
+                    <include name="A001_loginAdmin"/>
+                    <include name="A002_ChangeRoleforUser"/>
+                    <include name="A100_adminlogout"/>
+                    <include name="B001_loginUser"/>
+                </methods>
+            </class>
+            <class name="RegressionTest.DataProviderwithExcel_deleteUser">
+                <methods>
+                    <include name="A001_loginAdmin"/>
+                    <include name="B_0001_SearchUser"/>
+                    <include name="Z1000_logoutAdmin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="OperaTest">
+        <parameter name="browser" value="opera" />
+        <classes>
+            <class name="RegressionTest.DataProviderWithExcel_addUser">
+                <methods>
+                    <include name="A001_loginAdmin"/>
+                    <include name="A002_adduser"/>
+                    <include name="Z1000_logout"/>
+                </methods>
+            </class>
+            <class name="RegressionTest.DataProviderWithExcel_modifyUser">
+                <methods>
+                    <include name="A001_loginAdmin"/>
+                    <include name="A002_ChangeRoleforUser"/>
+                    <include name="A100_adminlogout"/>
+                    <include name="B001_loginUser"/>
+                </methods>
+            </class>
+            <class name="RegressionTest.DataProviderwithExcel_deleteUser">
+                <methods>
+                    <include name="A001_loginAdmin"/>
+                    <include name="B_0001_SearchUser"/>
+                    <include name="Z1000_logoutAdmin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

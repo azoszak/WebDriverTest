@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import static org.testng.Assert.fail;
+
 public class DataProviderwithExcel_deleteUser {
 
     private static WebDriver driver;
@@ -211,9 +213,15 @@ public class DataProviderwithExcel_deleteUser {
 
     }
 
-    @AfterTest
+ /*   @AfterTest
     public void afterTest()
     {
         driver.quit();
+    }*/
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown()  {
+        driver.quit();
     }
+
 }
