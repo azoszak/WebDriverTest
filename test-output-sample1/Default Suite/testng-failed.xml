@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]">
+  <test name="WebDriverTest(failed)">
+    <classes>
+      <class name="sample1">
+        <methods>
+          <include name="A002_addUser"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- sample1 -->
+    </classes>
+  </test> <!-- WebDriverTest(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="19873" started-at="2019-03-14T07:01:36Z" finished-at="2019-03-14T07:01:56Z">
+    <groups>
+    </groups>
+    <test name="Sample1" duration-ms="19873" started-at="2019-03-14T07:01:36Z" finished-at="2019-03-14T07:01:56Z">
+      <class name="sample1">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:sample1@1888ff2c]" name="beforeTest" is-config="true" duration-ms="13350" started-at="2019-03-14T08:01:36Z" finished-at="2019-03-14T08:01:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="A001_loginAdmin()[pri:0, instance:sample1@1888ff2c]" name="A001_loginAdmin" duration-ms="3157" started-at="2019-03-14T08:01:50Z" finished-at="2019-03-14T08:01:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A001_loginAdmin -->
+        <test-method status="PASS" signature="A003_logoutAdmin()[pri:0, instance:sample1@1888ff2c]" name="A003_logoutAdmin" duration-ms="2484" started-at="2019-03-14T08:01:53Z" finished-at="2019-03-14T08:01:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A003_logoutAdmin -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:sample1@1888ff2c]" name="afterTest" is-config="true" duration-ms="846" started-at="2019-03-14T08:01:55Z" finished-at="2019-03-14T08:01:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- sample1 -->
+    </test> <!-- Sample1 -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

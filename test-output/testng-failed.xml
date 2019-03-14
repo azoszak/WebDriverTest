@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]">
+  <parameter name="browser" value="opera"/>
+  <test name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="RegressionTest.DataProviderWithExcel_modifyUser">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- RegressionTest.DataProviderWithExcel_modifyUser -->
+      <class name="RegressionTest.DataProviderWithExcel_addUser">
+        <methods>
+          <include name="A002_adduser" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- RegressionTest.DataProviderWithExcel_addUser -->
+      <class name="RegressionTest.DataProviderwithExcel_deleteUser">
+        <methods>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- RegressionTest.DataProviderwithExcel_deleteUser -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

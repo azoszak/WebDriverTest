@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="dev">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://$MAVEN_REPOSITORY$/poi-bin-4.0.1-20181203/poi-4.0.1/docs/apidocs/dev" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
