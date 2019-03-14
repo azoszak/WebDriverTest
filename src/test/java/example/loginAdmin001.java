@@ -12,13 +12,6 @@ public class loginAdmin001 {
 
     public static void A001_loginAdmin(WebDriver driver, String sUsername, String sPassword) {
 
-      //  private WebDriver driver;
-      //  public String baseUrl = "http://localhost/wordpress";
-      //  public WebElement webtable;
-      //  private boolean acceptNextAlert = true;
-      //  private StringBuffer verificationErrors = new StringBuffer();
-      //  String sUsername = "admin";
-      //  String sPassword = "!NCS2019";
         driver.findElement(By.id("user_login")).sendKeys(sUsername);
         try{
             Thread.sleep(2000);

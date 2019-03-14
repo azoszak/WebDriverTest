@@ -44,7 +44,7 @@ public class ExcelUtils {
                // System.out.println();
                 for (int j = startCol; j < totalCols; j++, cj++) {
                     Cell = ExcelWSheet.getRow(i).getCell(j);
-                    //System.out.printf("Get Cell value(%d)  %s \n", j , Cell.getStringCellValue());
+                    System.out.printf("Row: %d  Col %d  Cell value  %s \n", i , j , getCellData(i,j));
                     tabArray[ci][cj] = getCellData(i, j) ;
                     //System.out.printf("%s \t", tabArray[ci][cj]);
                 }
@@ -67,18 +67,43 @@ public class ExcelUtils {
 
             if (Cell.getCellType() == CellType.BOOLEAN) {
                 String s = Boolean.toString(Cell.getBooleanCellValue());
-                System.out.printf("Boolean Cell Type: %s Cell value: %s \n", Cell.getCellType(), Cell.getBooleanCellValue() );
+               // System.out.printf("Boolean Cell Type: %s Cell value: %s \n", Cell.getCellType(), Cell.getBooleanCellValue() );
                 return Boolean.toString(Cell.getBooleanCellValue());
             }
             else if (Cell.getCellType() == CellType.NUMERIC) {
-                System.out.printf("Boolean Cell Type: %s Cell value: %s \n", Cell.getCellType(), Cell.getBooleanCellValue() );
+               // System.out.printf("Boolean Cell Type: %s Cell value: %s \n", Cell.getCellType(), Cell.getBooleanCellValue() );
                 return String.valueOf(Cell.getNumericCellValue());
             }
-            else {
+            else if (Cell.getCellType() == CellType.BLANK) {
+               // System.out.printf("Blank Cell Type: %s Cell value: %s \n", Cell.getCellType(), Cell.getStringCellValue() );
+                return "";
+            }
+
+            else if (Cell.getCellType() == CellType.STRING) {
                 String CellData = Cell.getStringCellValue();
-                System.out.printf("Cell Type: %s Cell value %s \n", Cell.getCellType(), CellData);
+               // System.out.printf("Cell Type: %s Cell value %s \n", Cell.getCellType(), Cell.getStringCellValue());
                 return CellData;
             }
+
+            else if (Cell.getCellType() == CellType._NONE) {
+                String CellData = Cell.getStringCellValue();
+                //System.out.printf("Cell Type: %s Cell value %s \n", Cell.getCellType(), Cell.getStringCellValue());
+                return "";
+            }
+
+            else if (Cell.getCellType() == CellType.FORMULA) {
+                String CellData = Cell.getStringCellValue();
+                //System.out.printf("Cell Type: %s Cell value %s \n", Cell.getCellType(), Cell.getStringCellValue());
+                return CellData;
+            }
+
+            else  {
+                String CellData = Cell.getStringCellValue();
+                //System.out.printf("Cell Type: %s Cell value %s \n", Cell.getCellType(), CellData);
+                return "";
+            }
+
+
         }
 
         catch(Exception e){

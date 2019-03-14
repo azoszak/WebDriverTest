@@ -28,13 +28,13 @@ public class sample1 {
     @Test
     public void A001_loginAdmin() {
         //System.out.println("Login user as admin");
-        driver.findElement(By.id("user_login")).clear();
+        //driver.findElement(By.id("user_login")).clear();
         driver.findElement(By.id("user_login")).sendKeys("admin");
-        try{
-            Thread.sleep(2000);
-        }
-        catch(InterruptedException ie){
-        }
+        //try{
+        //    Thread.sleep(2000);
+        //}
+        //catch(InterruptedException ie){
+        //}
         driver.findElement(By.id("user_pass")).clear();
         driver.findElement(By.id("user_pass")).sendKeys("!NCS2019");
         driver.findElement(By.id("wp-submit")).click();
@@ -45,7 +45,6 @@ public class sample1 {
 
     @Test
     public void  A002_addUser() {
-
         Actions action = new Actions(driver);
         action.moveToElement(driver.findElement(By.xpath("//*[@class = 'wp-menu-image dashicons-before dashicons-admin-users']"))).perform();
         WebDriverWait w = new WebDriverWait(driver,20);
@@ -63,8 +62,7 @@ public class sample1 {
         }
         new Select(driver.findElement(By.id("role"))).selectByVisibleText("Mitarbeiter");
         driver.findElement(By.id("createusersub")).click();
-        WebDriverWait w2 = new WebDriverWait(driver,20);
-        w2.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
+        w.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
         Assert.assertEquals(driver.findElement(By.id("message")).getText().contains("Neuer Benutzer erstellt"), true);
     }
 

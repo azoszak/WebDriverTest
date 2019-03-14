@@ -107,7 +107,6 @@ public class DataProviderWithExcel_addUser {
         driver.findElement(By.id("last_name")).click();
         driver.findElement(By.id("last_name")).clear();
         driver.findElement(By.id("last_name")).sendKeys(slastName);
-
         driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
         driver.findElement(By.id("pass1-text")).click();
         driver.findElement(By.id("pass1-text")).clear();

@@ -184,6 +184,8 @@ public class DataProviderwithExcel_deleteUser {
             driver.findElement(By.id("delete_option0")).click();
         }
         driver.findElement(By.id("submit")).click();
+
+        // //*[@id="locale"]/option[2]
     }
 
     public void B_0004_DeleteSelectedAdmin() throws Exception {

@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -16,7 +17,8 @@ import org.openqa.selenium.support.ui.Select;
 
 
 public class modifyUser {
-    private WebDriver driver;
+    private  WebDriver driver;
+    public setBrowser browserWeb = new setBrowser(driver);
     public String baseUrl = "http://localhost/wordpress";
     public WebElement webtable;
     private boolean acceptNextAlert = true;
@@ -28,112 +30,108 @@ public class modifyUser {
         return (testObjArray);
     }
 
-    @Parameters("browser")
+    @DataProvider(name = "changeRoleforUser")
+    public static Object[][] changeRoleUser() {
+        Object[][] testObjArray_modUser = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\TCListeModifyUser.xlsx","modfyUser_TC");
+        return (testObjArray_modUser);
+    }
+
+    @Parameters({"browser", "HttpHomePage", "sUsername","sPassword"})
     @BeforeClass( alwaysRun = true)
-    public void setUp(String browser ) throws Exception {
-
-        if(browser.equalsIgnoreCase("firefox")) {
-            WebDriverManager.chromedriver().setup();
-            driver = new FirefoxDriver();
-        }
-        else if(browser.equalsIgnoreCase("ie")){
-            WebDriverManager.iedriver().setup();
-            driver = new InternetExplorerDriver();
-        }
-        else {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        }
-
-        driver.get(baseUrl);
-        String title = driver.getTitle();
-        Assert.assertTrue(title.contains("NCS-Testing"));
+    public void setUp(String browser, String HttpHomePage, String sUsername, String sPassword ) throws Exception {
+        driver = browserWeb.setUp(browser);
+        driver.get(HttpHomePage);
+        Assert.assertTrue(driver.getTitle().contains("NCS-Testing"));
         driver.findElement(By.linkText("Anmelden")).click();
-
-        String sUsername = "admin";
-        String sPassword = "!NCS2019";
+        //String sUsername = "admin";
+        //String sPassword = "!NCS2019";
         loginAdmin001.A001_loginAdmin(driver,sUsername,sPassword);
-       // loginAdmin001.Z1000_logout(driver);
-
-    }
-        @Test()
-        public void A002_ChangeRole() throws Exception {
-
-        Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(By.xpath("//*[@class = 'wp-menu-image dashicons-before dashicons-admin-users']"))).perform();
-        WebDriverWait w = new WebDriverWait(driver,20);
-        w.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Alle Benutzer")));
-        driver.findElement(By.linkText("Alle Benutzer")).click();
-        // Benutzer auswählen
-
-        driver.findElement(By.id("role")).click();
-        new Select(driver.findElement(By.id("role"))).selectByVisibleText("Autor");
-        driver.findElement(By.id("role")).click();
-        driver.findElement(By.id("submit")).click();
-        loginAdmin001.Z1000_logout(driver);
 
     }
 
+        @Test(dataProvider = "changeRoleforUser")
+        public void A002_ChangeRoleforUser(String  sTC, String sUserName,
+                                           String  sVisuellerEditor,
+                                           String  sFarbschemaverwalten,String  sTastaturkürzel,
+                                           String  sSprache,
+                                           String  sWerkzeugleiste,String  sBenutzername,
+                                           String  sRolle,String  sVorname,
+                                           String  sNachname,String  sSpitzname,
+                                           String  sEMail,String  sWebseite,
+                                           String  sBiografischeAngaben,String  sNeuesPasswort
+                                           ) {
 
-    //@Test(dataProvider = "userLogin")
-    public void  A003_loginUser(String sTC, String sUsername, String sPassword, String firstName, String lastName) {
+            Boolean  breakFor = true;
+            String sUserID = "";
+            Actions action = new Actions(driver);
+            action.moveToElement(driver.findElement(By.xpath("//*[@class = 'wp-menu-image dashicons-before dashicons-admin-users']"))).perform();
+            WebDriverWait w = new WebDriverWait(driver, 20);
+            w.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Alle Benutzer")));
+            driver.findElement(By.linkText("Alle Benutzer")).click();
+            // Benutzer auswählen
+            sUserID = getUserIDfromName.getUserIDfromName(driver, sUserName);
+            if (!sUserID.isEmpty()) {
+                //System.out.printf("sUderID: %s \n", sUserID);
+                Actions action2 = new Actions(driver);
+                action2.moveToElement(driver.findElement(By.xpath("//*[@id='user-" + sUserID + "']/td[1]/strong/a"))).perform();
+                WebDriverWait w_wait = new WebDriverWait(driver, 20);
+                w_wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Bearbeiten")));
+                driver.findElement(By.linkText("Bearbeiten")).click();
+                // //tr[@id='user-129']/td/div/span[2]/a ->  span[1] Benutzer bearbeiten, span[2]: Benutzer löschen,  span[3]: Benutzer anschauen
+                // change role
+                driver.findElement(By.id("role")).click();
+                new Select(driver.findElement(By.id("role"))).selectByVisibleText(sRolle);
+                driver.findElement(By.id("role")).click();
 
-        System.out.printf("\n Testcase: %s Login user as : %s  Passwd: %s \n",sTC, sUsername, sPassword);
-        //driver.findElement(By.id("user_login")).clear();
-        driver.findElement(By.id("user_login")).sendKeys(sUsername);
-        try{
-            Thread.sleep(2000);
+                // change Visueller Editor //*[@id="rich_editing"]
+                if( sVisuellerEditor.equals("ja")) {
+                    if (!driver.findElement(By.xpath("//*[@id=\"rich_editing\"]")).isSelected()) {
+                        driver.findElement(By.xpath("//*[@id=\"rich_editing\"]")).click();
+                    }
+                }
+                else {
+                    if (driver.findElement(By.xpath("//*[@id=\"rich_editing\"]")).isSelected()) {
+                        driver.findElement(By.xpath("//*[@id=\"rich_editing\"]")).click();
+                    }
+                }
+                // Farbschema verwalten
+                ////*[@id="color-picker"]/div[1]
+                int j_rowCount = driver.findElements(By.xpath("//*[@id=\"color-picker\"]/div")).size();
+                for (int j = 1; j <= j_rowCount && breakFor; j++) {
+                    System.out.printf("Aufzählen der Farbwerte: %s", driver.findElement(By.xpath("//*[@id=\"color-picker\"]/div[" + j + "]/label")).getText());
+                    if(driver.findElement(By.xpath("//*[@id=\"color-picker\"]/div[" + j + "]/label")).getText().contains(sFarbschemaverwalten)) {
+                        driver.findElement(By.xpath("//*[@id=\"color-picker\"]/div[" + j + "]/input")).click();
+                        breakFor = false;
+                    }
+                }
+
+ ////*[@id="wp-submit"]
+
+                // change speech
+                breakFor = true;
+                int i_rowCount = driver.findElements(By.xpath("//*[@id=\"locale\"]/option")).size();
+                for (int i = 1; i <= i_rowCount && breakFor; i++) {
+                   if(driver.findElement(By.xpath("//*[@id=\"locale\"]/option[" + i + "]")).getText().contains(sSprache)) {
+                       driver.findElement(By.xpath("//*[@id=\"locale\"]/option[" + i + "]")).click();
+                       breakFor = false;
+                   }
+                }
+
+
+                driver.findElement(By.id("submit")).click();
+                // Verification role changes: seach for message: 'Benutzer aktualisiert'
+                String s = driver.findElement(By.xpath("//*[@id=\"message\"]/p[1]/strong")).getText();
+                Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"message\"]/p[1]/strong")).getText().contains("Benutzer aktualisiert"), true);
+            }
+            else {
+                Assert.assertTrue(false);
+            }
+
         }
-        catch(InterruptedException ie){
-        }
-        //driver.findElement(By.id("user_pass")).clear();
-        driver.findElement(By.id("user_pass")).sendKeys(sPassword);
-        driver.findElement(By.id("wp-submit")).click();
-        WebDriverWait wait = new WebDriverWait(driver,2);
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("wp-admin-bar-my-account")));
-        System.out.printf("Anmeldung: %n  %s", driver.findElement(By.id("wp-admin-bar-my-account")).getText());
-        Assert.assertEquals(driver.findElement(By.id("wp-admin-bar-my-account")).getText().contains(lastName),true);
-        // do something
-
-        Z1000_logout();
-    }
-
-    //@Test
-    public void modifyUser() throws Exception {
-
-
-        driver.findElement(By.xpath("//*[normalize-space(text()) and normalize-space(.)='Erstellen'])[2]/following::div[8]")).click();
-        driver.findElement(By.id("description")).click();
-        driver.findElement(By.id("description")).clear();
-        driver.findElement(By.id("description")).sendKeys("Dies ist ein Test");
-        driver.findElement(By.xpath("//*[normalize-space(text()) and normalize-space(.)='Neues Passwort'])[1]/following::button[1]")).click();
-        driver.findElement(By.id("pass1-text")).click();
-        driver.findElement(By.id("pass1-text")).clear();
-        driver.findElement(By.id("pass1-text")).sendKeys("$_1234zz");
-
-        if ( driver.findElement(By.className("pw-checkbox")).isDisplayed() ){
-            driver.findElement(By.className("pw-checkbox")).click();
-        }
-        driver.findElement(By.id("submit")).click();
-        driver.findElement(By.linkText("Abmelden")).click();
-
-    }
-
-    public void Z1000_logout() {
-        Actions action = new Actions(driver);
-        WebElement mainMenue = driver.findElement(By.id("wp-admin-bar-my-account"));
-        action.moveToElement(mainMenue).perform();
-        WebDriverWait w = new WebDriverWait(driver,20);
-        w.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Abmelden")));
-        driver.findElement(By.linkText("Abmelden")).click();
-        w.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("login")));
-        Assert.assertEquals(driver.findElement(By.id("login")).getText().contains("Du hast dich erfolgreich abgemeldet"), true);
-        //System.out.printf("Abmeldung: %n  %s", driver.findElement(By.id("login")).getText());
-
-    }
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
+        loginAdmin001.Z1000_logout(driver);
         driver.quit();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
