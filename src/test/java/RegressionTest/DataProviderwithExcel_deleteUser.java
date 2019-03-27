@@ -34,7 +34,7 @@ public class DataProviderwithExcel_deleteUser {
     }
     @DataProvider(name = "delteUser")
     public static Object[][] deleteUser() {
-        Object[][] testObjArray_deleteUser = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","deleteUser");
+        Object[][] testObjArray_deleteUser = ExcelUtils_V2.getTableArray("AddUserTCs.xlsx","deleteUser");
         return (testObjArray_deleteUser);
     }
 
@@ -215,15 +215,5 @@ public class DataProviderwithExcel_deleteUser {
 
     }
 
- /*   @AfterTest
-    public void afterTest()
-    {
-        driver.quit();
-    }*/
-
-    @AfterClass(alwaysRun = true)
-    public void tearDown()  {
-        driver.quit();
-    }
 
 }

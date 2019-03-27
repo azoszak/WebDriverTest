@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class ExcelUtils {
+public class ExcelUtils_V2 {
 
     private static XSSFSheet ExcelWSheet;
     private static XSSFWorkbook ExcelWBook;

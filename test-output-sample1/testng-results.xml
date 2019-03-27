@@ -1,29 +1,1441 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="34" passed="34">
   <reporter-output>
   </reporter-output>
-  <suite name="All Test Suite" duration-ms="19873" started-at="2019-03-14T07:01:36Z" finished-at="2019-03-14T07:01:56Z">
+  <suite name="All Test Suite" duration-ms="265862" started-at="2019-03-20T08:56:21Z" finished-at="2019-03-20T09:00:47Z">
     <groups>
     </groups>
-    <test name="Sample1" duration-ms="19873" started-at="2019-03-14T07:01:36Z" finished-at="2019-03-14T07:01:56Z">
-      <class name="sample1">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:sample1@1888ff2c]" name="beforeTest" is-config="true" duration-ms="13350" started-at="2019-03-14T08:01:36Z" finished-at="2019-03-14T08:01:50Z">
+    <test name="Chrome Test" duration-ms="132055" started-at="2019-03-20T08:56:21Z" finished-at="2019-03-20T08:58:33Z">
+      <class name="RegressionTest.DataProviderWithExcel_all">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="setUp" is-config="true" duration-ms="14605" started-at="2019-03-20T09:56:21Z" finished-at="2019-03-20T09:56:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://localhost/wordpress]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[!NCS2019]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="A001_loginAdmin()[pri:0, instance:sample1@1888ff2c]" name="A001_loginAdmin" duration-ms="3157" started-at="2019-03-14T08:01:50Z" finished-at="2019-03-14T08:01:53Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A002_adduser" duration-ms="8119" started-at="2019-03-20T09:56:37Z" data-provider="addUser" finished-at="2019-03-20T09:56:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase1@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Mitarbeiter]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- A001_loginAdmin -->
-        <test-method status="PASS" signature="A003_logoutAdmin()[pri:0, instance:sample1@1888ff2c]" name="A003_logoutAdmin" duration-ms="2484" started-at="2019-03-14T08:01:53Z" finished-at="2019-03-14T08:01:55Z">
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A002_adduser" duration-ms="6605" started-at="2019-03-20T09:56:45Z" data-provider="addUser" finished-at="2019-03-20T09:56:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase2@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase2]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Abonnent]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- A003_logoutAdmin -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:sample1@1888ff2c]" name="afterTest" is-config="true" duration-ms="846" started-at="2019-03-14T08:01:55Z" finished-at="2019-03-14T08:01:56Z">
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A002_adduser" duration-ms="6289" started-at="2019-03-20T09:56:52Z" data-provider="addUser" finished-at="2019-03-20T09:56:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase3]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase3@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase3]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Autor]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- sample1 -->
-    </test> <!-- Sample1 -->
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A002_adduser" duration-ms="6158" started-at="2019-03-20T09:56:58Z" data-provider="addUser" finished-at="2019-03-20T09:57:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase4]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase4@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase4]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase4]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Redakteur]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A002_adduser" duration-ms="6018" started-at="2019-03-20T09:57:04Z" data-provider="addUser" finished-at="2019-03-20T09:57:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase5]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase5@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase5]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase5]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Administrator]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A002_adduser" duration-ms="6638" started-at="2019-03-20T09:57:10Z" data-provider="addUser" finished-at="2019-03-20T09:57:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase6]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase6@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase6]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase6]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Abonnent]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A002_adduser" duration-ms="5998" started-at="2019-03-20T09:57:17Z" data-provider="addUser" finished-at="2019-03-20T09:57:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase7]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase7@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase7]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase7]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Autor]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A002_adduser" duration-ms="6130" started-at="2019-03-20T09:57:23Z" data-provider="addUser" finished-at="2019-03-20T09:57:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase8]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase8@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase8]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234zz]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Redakteur]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A002_adduser" duration-ms="6197" started-at="2019-03-20T09:57:29Z" data-provider="addUser" finished-at="2019-03-20T09:57:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase9]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase9@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase9]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Mitarbeiter]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A010_UpdateUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A010_UpdateUser" duration-ms="9483" started-at="2019-03-20T09:57:35Z" data-provider="UpdateUser" finished-at="2019-03-20T09:57:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[modifyUser_zz_nase1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ja]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Hell]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[ja]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[ja]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[English]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[test1]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Abonnent]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Nase1]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[AZ]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Nase1AZ]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Nase1AZ@emailgibtesnicht.de]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[www.Nase1AZ.de]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Ich bin Tester]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[nase11]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A010_UpdateUser -->
+        <test-method status="PASS" signature="A010_UpdateUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="A010_UpdateUser" duration-ms="9754" started-at="2019-03-20T09:57:45Z" data-provider="UpdateUser" finished-at="2019-03-20T09:57:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[modifyUser_zz_nase2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[nein]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Blau]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[nein]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[nein]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Deutsch]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[nothing to do ]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Mitarbeiter]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Nase2]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[AZ]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Nase2AZ]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Nase2AZ@emailgibtesnicht.de]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[www.Nase2AZ.de]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[1234567ggggggggggggggggggggggggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Nase2AZ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A010_UpdateUser -->
+        <test-method status="PASS" signature="B010_deleteUser(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="B010_deleteUser" duration-ms="5640" started-at="2019-03-20T09:57:55Z" data-provider="deleteUser" finished-at="2019-03-20T09:58:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B010_deleteUser -->
+        <test-method status="PASS" signature="B010_deleteUser(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="B010_deleteUser" duration-ms="5404" started-at="2019-03-20T09:58:00Z" data-provider="deleteUser" finished-at="2019-03-20T09:58:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B010_deleteUser -->
+        <test-method status="PASS" signature="B010_deleteUser(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="B010_deleteUser" duration-ms="5358" started-at="2019-03-20T09:58:06Z" data-provider="deleteUser" finished-at="2019-03-20T09:58:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B010_deleteUser -->
+        <test-method status="PASS" signature="B010_deleteUser(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="B010_deleteUser" duration-ms="5349" started-at="2019-03-20T09:58:11Z" data-provider="deleteUser" finished-at="2019-03-20T09:58:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B010_deleteUser -->
+        <test-method status="PASS" signature="B010_deleteUser(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="B010_deleteUser" duration-ms="4982" started-at="2019-03-20T09:58:16Z" data-provider="deleteUser" finished-at="2019-03-20T09:58:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B010_deleteUser -->
+        <test-method status="PASS" signature="B020_deleteUserMultiSelection(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="B020_deleteUserMultiSelection" duration-ms="8452" started-at="2019-03-20T09:58:22Z" data-provider="deleteUserMultiSelection" finished-at="2019-03-20T09:58:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser(Several)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B020_deleteUserMultiSelection -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:RegressionTest.DataProviderWithExcel_all@1fbc7afb]" name="tearDown" is-config="true" duration-ms="2766" started-at="2019-03-20T09:58:30Z" finished-at="2019-03-20T09:58:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- RegressionTest.DataProviderWithExcel_all -->
+    </test> <!-- Chrome Test -->
+    <test name="Opera Test" duration-ms="133779" started-at="2019-03-20T08:58:33Z" finished-at="2019-03-20T09:00:47Z">
+      <class name="RegressionTest.DataProviderWithExcel_all">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="setUp" is-config="true" duration-ms="15400" started-at="2019-03-20T09:58:33Z" finished-at="2019-03-20T09:58:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[opera]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://localhost/wordpress]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[!NCS2019]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A002_adduser" duration-ms="8899" started-at="2019-03-20T09:58:48Z" data-provider="addUser" finished-at="2019-03-20T09:58:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase1@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Mitarbeiter]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A002_adduser" duration-ms="6802" started-at="2019-03-20T09:58:57Z" data-provider="addUser" finished-at="2019-03-20T09:59:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase2@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase2]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Abonnent]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A002_adduser" duration-ms="6627" started-at="2019-03-20T09:59:04Z" data-provider="addUser" finished-at="2019-03-20T09:59:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase3]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase3@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase3]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Autor]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A002_adduser" duration-ms="6408" started-at="2019-03-20T09:59:11Z" data-provider="addUser" finished-at="2019-03-20T09:59:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase4]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase4@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase4]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase4]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Redakteur]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A002_adduser" duration-ms="6293" started-at="2019-03-20T09:59:17Z" data-provider="addUser" finished-at="2019-03-20T09:59:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase5]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase5@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase5]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase5]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Administrator]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A002_adduser" duration-ms="6423" started-at="2019-03-20T09:59:24Z" data-provider="addUser" finished-at="2019-03-20T09:59:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase6]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase6@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase6]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase6]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Abonnent]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A002_adduser" duration-ms="6637" started-at="2019-03-20T09:59:30Z" data-provider="addUser" finished-at="2019-03-20T09:59:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase7]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase7@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase7]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234%!zz_nase7]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Autor]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A002_adduser" duration-ms="6643" started-at="2019-03-20T09:59:37Z" data-provider="addUser" finished-at="2019-03-20T09:59:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase8]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase8@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase8]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_1234zz]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Redakteur]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A002_adduser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A002_adduser" duration-ms="6216" started-at="2019-03-20T09:59:43Z" data-provider="addUser" finished-at="2019-03-20T09:59:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addUserRole]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase9]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zz_nase9@emailgehtnicht.de]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ZZ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Nase9]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[$_]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Mitarbeiter]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A002_adduser -->
+        <test-method status="PASS" signature="A010_UpdateUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A010_UpdateUser" duration-ms="9570" started-at="2019-03-20T09:59:50Z" data-provider="UpdateUser" finished-at="2019-03-20T09:59:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[modifyUser_zz_nase1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ja]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Hell]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[ja]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[ja]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[English]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[test1]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Abonnent]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Nase1]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[AZ]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Nase1AZ]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Nase1AZ@emailgibtesnicht.de]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[www.Nase1AZ.de]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Ich bin Tester]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[nase11]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A010_UpdateUser -->
+        <test-method status="PASS" signature="A010_UpdateUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="A010_UpdateUser" duration-ms="10311" started-at="2019-03-20T09:59:59Z" data-provider="UpdateUser" finished-at="2019-03-20T10:00:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[modifyUser_zz_nase2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[nein]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Blau]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[nein]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[nein]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Deutsch]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[nothing to do ]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Mitarbeiter]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Nase2]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[AZ]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Nase2AZ]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Nase2AZ@emailgibtesnicht.de]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[www.Nase2AZ.de]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[1234567ggggggggggggggggggggggggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Nase2AZ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A010_UpdateUser -->
+        <test-method status="PASS" signature="B010_deleteUser(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="B010_deleteUser" duration-ms="5449" started-at="2019-03-20T10:00:10Z" data-provider="deleteUser" finished-at="2019-03-20T10:00:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B010_deleteUser -->
+        <test-method status="PASS" signature="B010_deleteUser(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="B010_deleteUser" duration-ms="5162" started-at="2019-03-20T10:00:15Z" data-provider="deleteUser" finished-at="2019-03-20T10:00:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B010_deleteUser -->
+        <test-method status="PASS" signature="B010_deleteUser(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="B010_deleteUser" duration-ms="4794" started-at="2019-03-20T10:00:20Z" data-provider="deleteUser" finished-at="2019-03-20T10:00:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B010_deleteUser -->
+        <test-method status="PASS" signature="B010_deleteUser(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="B010_deleteUser" duration-ms="4600" started-at="2019-03-20T10:00:25Z" data-provider="deleteUser" finished-at="2019-03-20T10:00:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B010_deleteUser -->
+        <test-method status="PASS" signature="B010_deleteUser(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="B010_deleteUser" duration-ms="5151" started-at="2019-03-20T10:00:30Z" data-provider="deleteUser" finished-at="2019-03-20T10:00:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B010_deleteUser -->
+        <test-method status="PASS" signature="B020_deleteUserMultiSelection(java.lang.String, java.lang.String)[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="B020_deleteUserMultiSelection" duration-ms="8734" started-at="2019-03-20T10:00:35Z" data-provider="deleteUserMultiSelection" finished-at="2019-03-20T10:00:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DeleteUser(Several)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zz_nase]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B020_deleteUserMultiSelection -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:RegressionTest.DataProviderWithExcel_all@43a25848]" name="tearDown" is-config="true" duration-ms="2828" started-at="2019-03-20T10:00:44Z" finished-at="2019-03-20T10:00:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- RegressionTest.DataProviderWithExcel_all -->
+    </test> <!-- Opera Test -->
   </suite> <!-- All Test Suite -->
 </testng-results>

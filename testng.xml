@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="Sample1">
+    <parameter name="HttpHomePage" value="http://localhost:8090/wordpress" />
+    <parameter name="sUsername" value="admin" />
+    <parameter name="sPassword" value="!NCS2019" />
+    <test name="OperaTest">
+        <parameter name="browser" value="chrome" />
         <classes>
-            <class name="sample1">
+            <class name="RegressionTest.DataProviderWithExcel_all">
                 <methods>
-                    <include name="A001_loginAdmin"/>
-                    <include name="A002_addUser"/>
-                    <include name="A003_logoutAdmin"/>
+                    <include name="A002_adduser"/>
+                    <include name="A010_UpdateUser"/>
+                    <include name="B010_deleteUser"/>
+                    <include name="B020_deleteUserMultiSelection"/>
                 </methods>
             </class>
         </classes>

@@ -23,19 +23,19 @@ public class DataProviderWithExcel_modifyUser {
 
     @DataProvider(name = "userLogin")
     public static Object[][] userLogin() {
-        Object[][] testObjArray = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","UserLogin");
+        Object[][] testObjArray = ExcelUtils_V2.getTableArray("AddUserTCs.xlsx","UserLogin");
         return (testObjArray);
     }
 
     @DataProvider(name = "addUser")
     public static Object[][] addUser() {
-        Object[][] testObjArray_addUser = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","User");
+        Object[][] testObjArray_addUser = ExcelUtils_V2.getTableArray("AddUserTCs.xlsx","User");
         return (testObjArray_addUser);
     }
 
     @DataProvider(name = "changeRoleforUser")
     public static Object[][] changeRoleUser() {
-        Object[][] testObjArray_modUser = ExcelUtils.getTableArray("C:\\Users\\ZTE_testing\\IdeaProjects\\WebDriverTest\\AddUserTCs.xlsx","modifyUser");
+        Object[][] testObjArray_modUser = ExcelUtils_V2.getTableArray("AddUserTCs.xlsx","DataProviderWithExcel_all");
         return (testObjArray_modUser);
     }
 

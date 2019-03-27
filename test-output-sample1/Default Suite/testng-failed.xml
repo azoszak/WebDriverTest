@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default Suite]">
   <test name="WebDriverTest(failed)">
     <classes>
-      <class name="sample1">
+      <class name="RegressionTest.DataProviderWithExcel_all">
         <methods>
-          <include name="A002_addUser"/>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
+          <include name="tearDown"/>
+          <include name="B020_deleteUserMultiSelection"/>
         </methods>
-      </class> <!-- sample1 -->
+      </class> <!-- RegressionTest.DataProviderWithExcel_all -->
     </classes>
   </test> <!-- WebDriverTest(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

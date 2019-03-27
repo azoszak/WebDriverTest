@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [All Test Suite]">
-  <parameter name="browser" value="opera"/>
+  <parameter name="browser" value="chrome"/>
   <parameter name="sUsername" value="admin"/>
   <parameter name="HttpHomePage" value="http://localhost/wordpress"/>
   <parameter name="sPassword" value="!NCS2019"/>
   <test name="OperaTest(failed)">
-    <parameter name="browser" value="opera"/>
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="example.modifyUser">
+      <class name="RegressionTest.DataProviderWithExcel_all">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="A002_ChangeRoleforUser" invocation-numbers="0 1"/>
+          <include name="A002_adduser"/>
+          <include name="B020_deleteUserMultiSelection"/>
         </methods>
-      </class> <!-- example.modifyUser -->
+      </class> <!-- RegressionTest.DataProviderWithExcel_all -->
     </classes>
   </test> <!-- OperaTest(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

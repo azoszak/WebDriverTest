@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [All Test Suite]">
-  <test name="Sample1(failed)">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="sUsername" value="admin"/>
+  <parameter name="HttpHomePage" value="http://localhost/wordpress"/>
+  <parameter name="sPassword" value="!NCS2019"/>
+  <test name="Chrome Test(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="sample1">
+      <class name="RegressionTest.DataProviderWithExcel_all">
         <methods>
-          <include name="A002_addUser"/>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
+          <include name="setUp"/>
+          <include name="B010_deleteUser" invocation-numbers="0 1 2 3 4"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- sample1 -->
+      </class> <!-- RegressionTest.DataProviderWithExcel_all -->
     </classes>
-  </test> <!-- Sample1(failed) -->
+  </test> <!-- Chrome Test(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->
