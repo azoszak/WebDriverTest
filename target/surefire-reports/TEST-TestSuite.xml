@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="126.821" tests="23" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.specification.version" value="10"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/aleksander/IdeaProjects/WebDriverTest/target/test-classes:/home/aleksander/IdeaProjects/WebDriverTest/target/classes:/home/aleksander/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/home/aleksander/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/home/aleksander/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/aleksander/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/home/aleksander/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/aleksander/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/home/aleksander/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/home/aleksander/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/home/aleksander/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/home/aleksander/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/home/aleksander/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/aleksander/.m2/repository/io/github/bonigarcia/webdrivermanager/3.2.0/webdrivermanager-3.2.0.jar:/home/aleksander/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/aleksander/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/home/aleksander/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar:/home/aleksander/.m2/repository/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar:/home/aleksander/.m2/repository/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6.jar:/home/aleksander/.m2/repository/org/apache/httpcomponents/httpcore/4.4.10/httpcore-4.4.10.jar:/home/aleksander/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/aleksander/.m2/repository/org/rauschig/jarchivelib/1.0.0/jarchivelib-1.0.0.jar:/home/aleksander/.m2/repository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar:/home/aleksander/.m2/repository/org/testng/testng/6.8/testng-6.8.jar:/home/aleksander/.m2/repository/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar:/home/aleksander/.m2/repository/com/beust/jcommander/1.27/jcommander-1.27.jar:/home/aleksander/.m2/repository/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar:/home/aleksander/.m2/repository/org/apache/poi/poi/4.0.1/poi-4.0.1.jar:/home/aleksander/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/aleksander/.m2/repository/org/apache/commons/commons-collections4/4.2/commons-collections4-4.2.jar:/home/aleksander/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/home/aleksander/.m2/repository/org/apache/poi/poi-ooxml/4.0.1/poi-ooxml-4.0.1.jar:/home/aleksander/.m2/repository/org/apache/poi/poi-ooxml-schemas/4.0.1/poi-ooxml-schemas-4.0.1.jar:/home/aleksander/.m2/repository/org/apache/xmlbeans/xmlbeans/3.0.2/xmlbeans-3.0.2.jar:/home/aleksander/.m2/repository/org/apache/commons/commons-compress/1.18/commons-compress-1.18.jar:/home/aleksander/.m2/repository/com/github/virtuald/curvesapi/1.05/curvesapi-1.05.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="10"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/aleksander/IdeaProjects/WebDriverTest/target/surefire/surefirebooter15391019203984249988.jar /home/aleksander/IdeaProjects/WebDriverTest/target/surefire 2019-04-16T11-24-34_475-jvmRun1 surefire2023440783171515188tmp surefire_07302186233778880642tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/aleksander/IdeaProjects/WebDriverTest/target/test-classes:/home/aleksander/IdeaProjects/WebDriverTest/target/classes:/home/aleksander/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/home/aleksander/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/home/aleksander/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/home/aleksander/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/aleksander/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/home/aleksander/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/aleksander/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/home/aleksander/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/home/aleksander/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/home/aleksander/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/home/aleksander/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/home/aleksander/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/aleksander/.m2/repository/io/github/bonigarcia/webdrivermanager/3.2.0/webdrivermanager-3.2.0.jar:/home/aleksander/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/aleksander/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/home/aleksander/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar:/home/aleksander/.m2/repository/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar:/home/aleksander/.m2/repository/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6.jar:/home/aleksander/.m2/repository/org/apache/httpcomponents/httpcore/4.4.10/httpcore-4.4.10.jar:/home/aleksander/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/aleksander/.m2/repository/org/rauschig/jarchivelib/1.0.0/jarchivelib-1.0.0.jar:/home/aleksander/.m2/repository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar:/home/aleksander/.m2/repository/org/testng/testng/6.8/testng-6.8.jar:/home/aleksander/.m2/repository/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar:/home/aleksander/.m2/repository/com/beust/jcommander/1.27/jcommander-1.27.jar:/home/aleksander/.m2/repository/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar:/home/aleksander/.m2/repository/org/apache/poi/poi/4.0.1/poi-4.0.1.jar:/home/aleksander/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/aleksander/.m2/repository/org/apache/commons/commons-collections4/4.2/commons-collections4-4.2.jar:/home/aleksander/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/home/aleksander/.m2/repository/org/apache/poi/poi-ooxml/4.0.1/poi-ooxml-4.0.1.jar:/home/aleksander/.m2/repository/org/apache/poi/poi-ooxml-schemas/4.0.1/poi-ooxml-schemas-4.0.1.jar:/home/aleksander/.m2/repository/org/apache/xmlbeans/xmlbeans/3.0.2/xmlbeans-3.0.2.jar:/home/aleksander/.m2/repository/org/apache/commons/commons-compress/1.18/commons-compress-1.18.jar:/home/aleksander/.m2/repository/com/github/virtuald/curvesapi/1.05/curvesapi-1.05.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/aleksander"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2018-07-17"/>
+    <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/aleksander/IdeaProjects/WebDriverTest"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/home/aleksander/IdeaProjects/WebDriverTest/target/surefire/surefirebooter15391019203984249988.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="10.0.2+13-Ubuntu-1ubuntu0.18.04.4"/>
+    <property name="user.name" value="aleksander"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="4.18.0-17-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/aleksander/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="10.0.2"/>
+    <property name="user.dir" value="/home/aleksander/IdeaProjects/WebDriverTest"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="idea.version2019.1" value="true"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="10.0.2+13-Ubuntu-1ubuntu0.18.04.4"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="54.0"/>
+  </properties>
+  <testcase name="A002_adduser" classname="RegressionTest.DataProviderWithExcel_all" time="5.161"/>
+  <testcase name="A002_adduser" classname="RegressionTest.DataProviderWithExcel_all" time="3.976"/>
+  <testcase name="A002_adduser" classname="RegressionTest.DataProviderWithExcel_all" time="3.918"/>
+  <testcase name="A002_adduser" classname="RegressionTest.DataProviderWithExcel_all" time="3.892"/>
+  <testcase name="A002_adduser" classname="RegressionTest.DataProviderWithExcel_all" time="4.021"/>
+  <testcase name="A002_adduser" classname="RegressionTest.DataProviderWithExcel_all" time="3.858"/>
+  <testcase name="A002_adduser" classname="RegressionTest.DataProviderWithExcel_all" time="3.94"/>
+  <testcase name="A002_adduser" classname="RegressionTest.DataProviderWithExcel_all" time="3.829"/>
+  <testcase name="A002_adduser" classname="RegressionTest.DataProviderWithExcel_all" time="3.982"/>
+  <testcase name="A010_UpdateUser" classname="RegressionTest.DataProviderWithExcel_all" time="6.566"/>
+  <testcase name="A010_UpdateUser" classname="RegressionTest.DataProviderWithExcel_all" time="6.578"/>
+  <testcase name="A010_UpdateUser" classname="RegressionTest.DataProviderWithExcel_all" time="6.658"/>
+  <testcase name="A010_UpdateUser" classname="RegressionTest.DataProviderWithExcel_all" time="6.704"/>
+  <testcase name="A010_UpdateUser" classname="RegressionTest.DataProviderWithExcel_all" time="3.595">
+    <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;your-profile&quot;]/table[1]/tbody/tr[3]/td/label/input&quot;}&#10;  (Session info: chrome=73.0.3683.103)&#10;  (Driver info: chromedriver=2.45.615279 (12b89733300bd268cff3b78fc76cb8f3a7cc44e5),platform=Linux 4.18.0-17-generic x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 0 milliseconds&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;aleksander-ThinkPad-T410&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.18.0-17-generic&apos;, java.version: &apos;10.0.2&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615279 (12b89733300bd2..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:33601}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}&#10;Session ID: 8a0b99a506f250cef73ec135eb0780ce&#10;*** Element info: {Using=xpath, value=//*[@id=&quot;your-profile&quot;]/table[1]/tbody/tr[3]/td/label/input}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="your-profile"]/table[1]/tbody/tr[3]/td/label/input"}
+  (Session info: chrome=73.0.3683.103)
+  (Driver info: chromedriver=2.45.615279 (12b89733300bd268cff3b78fc76cb8f3a7cc44e5),platform=Linux 4.18.0-17-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'aleksander-ThinkPad-T410', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-17-generic', java.version: '10.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615279 (12b89733300bd2..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:33601}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: 8a0b99a506f250cef73ec135eb0780ce
+*** Element info: {Using=xpath, value=//*[@id="your-profile"]/table[1]/tbody/tr[3]/td/label/input}
+	at RegressionTest.DataProviderWithExcel_all.A010_UpdateUser(DataProviderWithExcel_all.java:164)
+</failure>
+    <system-out><![CDATA[Aufzählen der Farbwerte: StandardAufzählen der Farbwerte: HellAufzählen der Farbwerte: BlauAufzählen der Farbwerte: KaffeeAufzählen der Farbwerte: EktoplasmaAufzählen der Farbwerte: Mitternacht]]></system-out>
+  </testcase>
+  <testcase name="A010_UpdateUser" classname="RegressionTest.DataProviderWithExcel_all" time="7.214"/>
+  <testcase name="A010_UpdateUser" classname="RegressionTest.DataProviderWithExcel_all" time="7.493"/>
+  <testcase name="A010_UpdateUser" classname="RegressionTest.DataProviderWithExcel_all" time="7.821"/>
+  <testcase name="B010_deleteUser" classname="RegressionTest.DataProviderWithExcel_all" time="3.619"/>
+  <testcase name="B010_deleteUser" classname="RegressionTest.DataProviderWithExcel_all" time="3.418"/>
+  <testcase name="B010_deleteUser" classname="RegressionTest.DataProviderWithExcel_all" time="3.506"/>
+  <testcase name="B010_deleteUser" classname="RegressionTest.DataProviderWithExcel_all" time="3.402"/>
+  <testcase name="B010_deleteUser" classname="RegressionTest.DataProviderWithExcel_all" time="3.327"/>
+  <testcase name="B020_deleteUserMultiSelection" classname="RegressionTest.DataProviderWithExcel_all" time="9.655"/>
+</testsuite>

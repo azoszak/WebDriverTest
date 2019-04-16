@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="sUsername" value="admin"/>
+  <parameter name="HttpHomePage" value="http://localhost:8090/wordpress"/>
+  <parameter name="sPassword" value="!NCS2019"/>
+  <test name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="RegressionTest.DataProviderWithExcel_all">
+        <methods>
+          <include name="A010_UpdateUser" invocation-numbers="4"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="A002_adduser" invocation-numbers="0 1 2 3 4 5 6 7 8"/>
+        </methods>
+      </class> <!-- RegressionTest.DataProviderWithExcel_all -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
