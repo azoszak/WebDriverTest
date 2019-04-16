@@ -4,7 +4,7 @@
     <parameter name="HttpHomePage" value="http://localhost:8090/wordpress" />
     <parameter name="sUsername" value="admin" />
     <parameter name="sPassword" value="!NCS2019" />
-    <test name="OperaTest">
+    <test name="ChromeTest">
         <parameter name="browser" value="chrome" />
         <classes>
             <class name="RegressionTest.DataProviderWithExcel_all">
